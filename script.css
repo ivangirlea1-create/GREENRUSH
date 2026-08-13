@@ -1,0 +1,273 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050505;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  touch-action: none;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #3b0000 0%,
+      #180000 40%,
+      #050505 85%
+    );
+}
+
+/* СЧЁТ */
+
+#hud {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  padding: 12px 15px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: white;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  z-index: 50;
+
+  pointer-events: none;
+}
+
+#score {
+  color: #ff2020;
+}
+
+#best {
+  color: #ff7070;
+}
+
+/* ИГРОК */
+
+#player {
+  position: fixed;
+
+  width: 42px;
+  height: 42px;
+
+  display: none;
+
+  border-radius: 10px;
+
+  background: #ff1717;
+
+  box-shadow:
+    0 0 10px red,
+    0 0 25px red;
+
+  z-index: 20;
+}
+
+/* ВРАГ */
+
+.enemy {
+  position: fixed;
+
+  background: #850000;
+
+  border: 2px solid #ff3030;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 0 8px red,
+    0 0 18px red;
+
+  z-index: 10;
+}
+
+/* СТАРТОВОЕ ОКНО */
+
+#startScreen {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  color: white;
+
+  z-index: 100;
+}
+
+#startScreen h1 {
+  margin-bottom: 10px;
+
+  color: #ff2020;
+
+  font-size: clamp(40px, 12vw, 60px);
+
+  text-shadow:
+    0 0 10px red,
+    0 0 30px red;
+}
+
+#startScreen p {
+  margin-bottom: 25px;
+
+  color: #ccc;
+
+  font-size: 16px;
+}
+
+/* GAME OVER / ПОБЕДА */
+
+#endScreen {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: rgba(0, 0, 0, 0.82);
+
+  color: white;
+
+  z-index: 100;
+}
+
+#resultTitle {
+  margin-bottom: 12px;
+
+  color: #ff2020;
+
+  font-size: clamp(35px, 10vw, 50px);
+
+  text-shadow: 0 0 20px red;
+}
+
+#endScreen p {
+  margin-bottom: 25px;
+
+  font-size: 20px;
+}
+
+/* КНОПКИ */
+
+#startBtn,
+#againBtn {
+  border: none;
+
+  padding: 16px 35px;
+
+  border-radius: 14px;
+
+  background: #ff2020;
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  box-shadow:
+    0 0 10px red,
+    0 0 25px rgba(255, 0, 0, 0.5);
+
+  touch-action: manipulation;
+}
+
+/* УПРАВЛЕНИЕ */
+
+#buttons {
+  position: fixed;
+
+  left: 0;
+  bottom: 12px;
+
+  width: 100%;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  gap: 12px;
+
+  z-index: 90;
+}
+
+#buttons button {
+  flex: 1;
+
+  height: 68px;
+
+  border: 2px solid #ff2020;
+
+  border-radius: 16px;
+
+  background: rgba(70, 0, 0, 0.9);
+
+  color: white;
+
+  font-size: 34px;
+  font-weight: bold;
+
+  touch-action: none;
+
+  user-select: none;
+}
+
+#buttons button:active {
+  background: #ff2020;
+
+  transform: scale(0.96);
+}
+
+/* Маленькие экраны */
+
+@media (max-height: 650px) {
+
+  #buttons button {
+    height: 55px;
+  }
+
+  #startScreen h1 {
+    font-size: 38px;
+  }
+}
