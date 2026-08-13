@@ -21,11 +21,9 @@ body {
 #game {
   position: fixed;
   inset: 0;
-
   width: 100vw;
   height: 100vh;
   height: 100dvh;
-
   overflow: hidden;
 
   background:
@@ -37,29 +35,22 @@ body {
     );
 }
 
-/* СЧЁТ */
-
 #hud {
   position: fixed;
-
   top: 0;
   left: 0;
 
   width: 100%;
-
   padding: 12px 15px;
 
   display: flex;
   justify-content: space-between;
 
   color: white;
-
   font-size: 17px;
   font-weight: bold;
 
   z-index: 50;
-
-  pointer-events: none;
 }
 
 #score {
@@ -69,8 +60,6 @@ body {
 #best {
   color: #ff7070;
 }
-
-/* ИГРОК */
 
 #player {
   position: fixed;
@@ -91,8 +80,6 @@ body {
   z-index: 20;
 }
 
-/* ВРАГ */
-
 .enemy {
   position: fixed;
 
@@ -109,27 +96,30 @@ body {
   z-index: 10;
 }
 
-/* СТАРТОВОЕ ОКНО */
-
-#startScreen {
+#startScreen,
+#endScreen {
   position: fixed;
   inset: 0;
 
-  display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
 
-  padding: 20px;
-
   text-align: center;
 
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.8);
 
   color: white;
 
   z-index: 100;
+}
+
+#startScreen {
+  display: flex;
+}
+
+#endScreen {
+  display: none;
 }
 
 #startScreen h1 {
@@ -145,36 +135,12 @@ body {
 }
 
 #startScreen p {
-  margin-bottom: 25px;
-
+  margin: 0 20px 25px;
   color: #ccc;
-
-  font-size: 16px;
-}
-
-/* GAME OVER / ПОБЕДА */
-
-#endScreen {
-  position: fixed;
-  inset: 0;
-
-  display: none;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  background: rgba(0, 0, 0, 0.82);
-
-  color: white;
-
-  z-index: 100;
 }
 
 #resultTitle {
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 
   color: #ff2020;
 
@@ -185,15 +151,12 @@ body {
 
 #endScreen p {
   margin-bottom: 25px;
-
   font-size: 20px;
 }
 
-/* КНОПКИ */
-
 #startBtn,
 #againBtn {
-  border: none;
+  border: 0;
 
   padding: 16px 35px;
 
@@ -213,8 +176,6 @@ body {
   touch-action: manipulation;
 }
 
-/* УПРАВЛЕНИЕ */
-
 #buttons {
   position: fixed;
 
@@ -226,7 +187,6 @@ body {
   padding: 0 12px;
 
   display: flex;
-
   gap: 12px;
 
   z-index: 90;
@@ -249,20 +209,15 @@ body {
   font-weight: bold;
 
   touch-action: none;
-
   user-select: none;
 }
 
 #buttons button:active {
   background: #ff2020;
-
   transform: scale(0.96);
 }
 
-/* Маленькие экраны */
-
 @media (max-height: 650px) {
-
   #buttons button {
     height: 55px;
   }
